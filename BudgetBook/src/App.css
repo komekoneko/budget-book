@@ -1,0 +1,93 @@
+#root {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+  font-family: system-ui, sans-serif;
+  color: #1e293b;
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #0f172a;
+}
+
+/* 入力欄(項目名・金額とも) */
+input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.6rem 0.8rem;
+  font-size: 1rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  outline: none;
+  margin-bottom: 0.6rem;
+}
+
+input:focus {
+  border-color: #3b82f6;
+}
+
+/* 追加ボタン */
+button {
+  cursor: pointer;
+}
+
+#root > button {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  background: #3b82f6;
+  color: #fff;
+}
+
+#root > button:hover {
+  background: #2563eb;
+}
+
+/* 支出リスト */
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 1.5rem;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem 1rem;
+  margin-bottom: 0.5rem;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+}
+
+/* 削除ボタン */
+li button {
+  padding: 0.3rem 0.7rem;
+  font-size: 0.85rem;
+  border: none;
+  border-radius: 6px;
+  background: #ef4444;
+  color: #fff;
+  margin-left: 1rem;
+}
+
+li button:hover {
+  background: #dc2626;
+}
+
+/* 合計金額 */
+h2 {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 2px solid #e2e8f0;
+  text-align: right;
+  font-size: 1.5rem;
+  color: #0f172a;
+}
