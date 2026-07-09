@@ -35,6 +35,13 @@ function App() {
     return sum + expense.price
   }, 0)
 
+  const expenseFilter = (id: number) => {
+    const result = expenses.filter((expense) => {
+     return expense.id !== id
+    })
+    setExpenses(result);
+  }
+
   return (
     <>
       <h1>BudgetBook</h1>
@@ -53,7 +60,7 @@ function App() {
       <button onClick={addExpense}>追加</button>
       <ul>
         {expenses.map((expense) => {
-          return <li key={expense.id}>{expense.name} : {expense.price}</li>
+          return <li key={expense.id}>{expense.name} : {expense.price}<button onClick={() => expenseFilter(expense.id)}>削除</button></li>
         })}
       </ul>
       <h2>合計金額: {total}円</h2>
