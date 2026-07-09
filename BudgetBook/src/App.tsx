@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 
 type Expense = {
@@ -8,9 +8,16 @@ type Expense = {
 };
 
 function App() {
-  const [expenses, setExpenses] = useState<Expense[]>([]);
+  const saved = localStorage.getItem("expenses")
+
+
+  const [expenses, setExpenses] = useState<Expense[]>(saved? JSON.parse(saved):[]);
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
+
+  useEffect(() => {
+   localStorage.setItem("expenses", JSON.stringify(expenses));
+  },[expenses])
 
   const addExpense = () => {
     if(name === "" && price === ""){
