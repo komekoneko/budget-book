@@ -19,6 +19,8 @@ function App() {
       return alert("金額を記入してください");
     }else if(name === ""){
       return alert("項目名を記入してください");
+    }else if(isNaN(Number(price)) || Number(price) < 0){
+      return alert("正しい数値を入力してください")
     }
     const newExpense = {
       id: Date.now(),
@@ -52,7 +54,7 @@ function App() {
         onChange={(e) => setName(e.target.value)}
       />
       <input
-        type="text"
+        type="number"
         placeholder="金額"
         value={price}
         onChange={(e) => setPrice(e.target.value)}
@@ -60,7 +62,7 @@ function App() {
       <button onClick={addExpense}>追加</button>
       <ul>
         {expenses.map((expense) => {
-          return <li key={expense.id}>{expense.name} : {expense.price}<button onClick={() => expenseFilter(expense.id)}>削除</button></li>
+          return <li key={expense.id}>{expense.name} : {expense.price}円<button onClick={() => expenseFilter(expense.id)}>削除</button></li>
         })}
       </ul>
       <h2>合計金額: {total}円</h2>
